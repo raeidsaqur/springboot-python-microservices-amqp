@@ -1,3 +1,19 @@
+
+.idea*
+.python*
+dataSources
+*.iml
+*.pyc
+*.class
+*.ids
+*.ipr
+*.iws
+python-scraping-service/venv
+java-api-backend/build
+java-api-backend/.gradle
+java-api-backend/java-api-backend.iws
+*.log
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
