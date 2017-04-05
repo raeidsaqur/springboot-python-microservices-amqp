@@ -61,6 +61,11 @@ the comments in the Vagrantfile as well as documentation on
 
 To get rid of the vagrant VM, just run `vagrant destroy`
 
+Also, you may find it easier to manage the virtual boxes using *vagrant-manager*, which can be installed using `brew install vagrant-manager`
+
+![alt text][vagrant-manager]
+
+
 **Note**: to make things easier, in application.properties the line spring.jpa.hibernate.ddl-auto=create allows us to automatically create the tables when starting up. However, this means all tables get erased with each new start. Change the line to spring.jpa.hibernate.ddl-auto=validate (after you have started up the backend at least once) to avoid data loss.
 
 
@@ -83,6 +88,8 @@ Spring has a boot starter module available for RabbitMQ [link][4] `org.springfra
 4. [Spring Boot RabbitMQ][4]
 
 [vagrant-up]: https://github.com/raeidsaqur/springboot-python-microservices-amqp/blob/develop/docs/vagrant-up.png "vagrant up CLI message"
+[vagrant-manager]: https://github.com/raeidsaqur/springboot-python-microservices-amqp/blob/develop/docs/vagrant-manager.png
+
 
 [1]: https://pika.readthedocs.io/en/0.10.0/index.html
 [2]: https://atlas.hashicorp.com/boxes/search
