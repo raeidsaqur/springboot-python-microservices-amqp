@@ -2,6 +2,9 @@ import pika
 import json
 from scraper import Scraper
 
+import nltk
+nltk.download('punkt')
+
 '''
 pika.credentials module provides the mechanism to pass 
 username and password to the ConnectionParameters class

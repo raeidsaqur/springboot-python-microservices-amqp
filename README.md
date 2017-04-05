@@ -73,6 +73,19 @@ Also, you may find it easier to manage the virtual boxes using *vagrant-manager*
 
 [Pika link][1]: Pika is a pure-Python implementation of the AMQP 0-9-1 protocol that tries to stay fairly independent of the underlying network support library.
 
+#### Python Scraper
+
+For the actual scraping of a website’s summary, we use https://github.com/raeidsaqur/sumy library. Please see their docs (especially as it requires to have nltk installed on your system).
+
+
+The scraper is not doing much except using the sumy library and returning the result.
+
+To run the python scraper, install requirements.txt (preferably in a virtualenv) and then simply run worker.py:
+
+```
+(venv)python-scraping-service$ python worker.py 
+```
+
 ### Spring-boot Java Requirements
 
 Spring has a boot starter module available for RabbitMQ [link][4] `org.springframework.boot:spring-boot-starter-amqp`, which we add to our dependencies.

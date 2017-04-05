@@ -19,6 +19,7 @@ function BookmarkViewModel() {
 
     // add bookmark: send POST to bookmarks resource
     self.addBookmark = function () {
+        console.log("self.addBookmark");
         // a little bit of pre-processing of user entered url and note
         var newUrl = self.newUrl();
         if (typeof newUrl == "undefined") {
@@ -51,7 +52,7 @@ function BookmarkViewModel() {
 
     // update bookmark: send PUT to existing bookmarks resource
     self.updateBookmark = function (bookmark) {
-
+        console.log("self.updateBookmark");
         // same as in "addBookmark" a little bit of parameter checking. Some code duplication here
         // but we leave it for demonstration purposes
         var newUrl = bookmark.url();
@@ -94,6 +95,7 @@ function BookmarkViewModel() {
 
     // load bookmarks from server: GET on bookmarks resource
     self.loadBookmarks = function () {
+        console.log("self.loadBookmarks");
         $.ajax("http://localhost:8080/bookmarks", {
             type: "get",
             success: function (allData) {
