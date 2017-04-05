@@ -19,6 +19,14 @@ python-scraping-service$ python worker.py
 
 ```
 
+### Prerequisites
+
+_Note_: You must have *wget* and *apt-get* installed on Mac OS X for the vagrant scripts to execute successfully.
+
+_To install *wget*, simply run:_ `brew install wget`
+
+
+
 ### Vagrant Setup
 
 I've used virtualbox with ubuntu/trusty64 environment for running this. If you don't have it setup, the easiest to do this in Mac OS X is using Homebrew Cask:
@@ -62,6 +70,9 @@ To get rid of the vagrant VM, just run `vagrant destroy`
 
 ### Spring-boot Java Requirements
 
+Spring has a boot starter module available for RabbitMQ [link][4] `org.springframework.boot:spring-boot-starter-amqp`, which we add to our dependencies.
+
+
 ### Knockout JS front-end Requirements
 
 ### Reference:
@@ -69,10 +80,13 @@ To get rid of the vagrant VM, just run `vagrant destroy`
 1. [https://pika.readthedocs.io/en/0.10.0/index.html][1]
 2. [https://atlas.hashicorp.com/boxes/search][2]
 3. [https://atlas.hashicorp.com/ubuntu/boxes/trusty64][3]
+4. [Spring Boot RabbitMQ][4]
 
 [vagrant-up]: https://github.com/raeidsaqur/springboot-python-microservices-amqp/blob/develop/docs/vagrant-up.png "vagrant up CLI message"
 
 [1]: https://pika.readthedocs.io/en/0.10.0/index.html
 [2]: https://atlas.hashicorp.com/boxes/search
 [3]: https://atlas.hashicorp.com/ubuntu/boxes/trusty64
+[4]: https://spring.io/guides/gs/messaging-rabbitmq/
+
 
