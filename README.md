@@ -49,7 +49,9 @@ the comments in the Vagrantfile as well as documentation on
 	$ vagrant up --provider virtualbox
 ```
 
-To get rid of the vagrant VM, just run ```vagrant destroy```
+![alt text][vagrant-up]
+
+To get rid of the vagrant VM, just run `vagrant destroy`
 
 **Note**: to make things easier, in application.properties the line spring.jpa.hibernate.ddl-auto=create allows us to automatically create the tables when starting up. However, this means all tables get erased with each new start. Change the line to spring.jpa.hibernate.ddl-auto=validate (after you have started up the backend at least once) to avoid data loss.
 
@@ -67,6 +69,8 @@ To get rid of the vagrant VM, just run ```vagrant destroy```
 1. [https://pika.readthedocs.io/en/0.10.0/index.html][1]
 2. [https://atlas.hashicorp.com/boxes/search][2]
 3. [https://atlas.hashicorp.com/ubuntu/boxes/trusty64][3]
+
+[vagrant-up]: https://github.com/raeidsaqur/springboot-python-microservices-amqp/blob/develop/docs/vagrant-up.png "vagrant up CLI message"
 
 [1]: https://pika.readthedocs.io/en/0.10.0/index.html
 [2]: https://atlas.hashicorp.com/boxes/search
