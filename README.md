@@ -6,6 +6,8 @@ Exploring inter-services communication using AQMP brokers like RabbitMQ among py
 *cd* into each of the front-end, backend services directory and initiate them:
 
 ```
+vagrant up --provider virtualbox
+
 java-api-backend$ gradle run
 java-api-backend$ cd ../knockout-frontend
 
@@ -16,6 +18,41 @@ python-scraping-service$ pip install -r requirements.txt
 python-scraping-service$ python worker.py
 
 ```
+
+### Vagrant Setup
+
+I've used virtualbox with ubuntu/trusty64 environment for running this. If you don't have it setup, the easiest to do this in Mac OS X is using Homebrew Cask:
+
+##### Install
+
+```
+	$ brew cask install virtualbox
+	$ brew cask install vagrant
+```
+_Vagrant Manager_ helps you manage all your VMs in one place from menubar
+
+```
+	$ brew cask install vagrant-manager
+```
+Every Vagrant development environment requires a box. You can search for boxes at [link][2]
+
+The virtual box used for this demo is ubuntu/trusty64 [link][3]
+
+```
+	$ vagrant init ubuntu/trusty64; 
+```
+You should get a CL message: _A `Vagrantfile` has been placed in this directory. You are now ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant._
+
+```
+	$ vagrant up --provider virtualbox
+```
+
+To get rid of the vagrant VM, just run ```vagrant destroy```
+
+**Note**: to make things easier, in application.properties the line spring.jpa.hibernate.ddl-auto=create allows us to automatically create the tables when starting up. However, this means all tables get erased with each new start. Change the line to spring.jpa.hibernate.ddl-auto=validate (after you have started up the backend at least once) to avoid data loss.
+
 
 ### Python Modules and Requirements
 
@@ -28,5 +65,10 @@ python-scraping-service$ python worker.py
 ### Reference:
 
 1. [https://pika.readthedocs.io/en/0.10.0/index.html][1]
+2. [https://atlas.hashicorp.com/boxes/search][2]
+3. [https://atlas.hashicorp.com/ubuntu/boxes/trusty64][3]
 
 [1]: https://pika.readthedocs.io/en/0.10.0/index.html
+[2]: https://atlas.hashicorp.com/boxes/search
+[3]: https://atlas.hashicorp.com/ubuntu/boxes/trusty64
+
